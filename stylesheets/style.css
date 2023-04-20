@@ -1,0 +1,138 @@
+:root {
+    /* COLORS */
+    --background-color: #F5F3EF; 
+    --accent-color: #FEBD2F;
+    --cards-color: #FFFFFF;
+    --primary-text-color: #000000;
+    --secondary-text-color: #646464;
+    --outline-color: #DCDCDC; 
+
+    /* TYPOGRAPHY */
+    --heading-font-family: 'Roboto Serif', serif;
+    --heading-medium-bold: 500;
+    --heading-bold: 700;
+    --paragraph-button-font-family: 'Roboto', sans-serif;
+    --paragraph-font-weight: 400;
+    --subheader-paragraph-h3-font-size: 24px;
+
+    /* SPACING AND MARGINS */
+    --padding-for-sections: 20px;
+    --grid-gaps: 15px;
+
+    /* OTHER */
+
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.content-container {
+    display: grid;
+    grid-template: auto / repeat(3, 1fr);
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h1, h2 {
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-medium-bold);
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-weight: var(--heading-bold);
+    font-family: var(--heading-font-family);
+    font-size: var(--subheader-paragraph-h3-font-size);
+}
+
+p, button {
+    font-family: var(--paragraph-button-font-family);
+    font-size: 18px;
+
+}
+
+p {
+    color: var(--secondary-text-color);
+}
+
+header, main {
+    width: 90%;
+    margin: auto;
+    grid-column: 1 / -1;
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+/* HEADER STYLING */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+header img {
+    max-width: 160px;
+    height: auto;
+}
+/* BANNER STYLING */
+.banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--grid-gaps);
+}
+.banner p {
+    font-size: 24px;
+}
+/* CARDS SECTION STYLING */
+.cards-section {
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    gap: var(--grid-gaps);
+}
+
+
+/* CARDS STYLING */
+.class-card {
+    border-radius: 10%;
+    background-color: var(--cards-color);
+    padding: 20px;
+    position: relative;
+}
+
+.header-card {
+    background-color: var(--accent-color);
+}
+
+.class-symbol {
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
+/* FOOTER STYLING */
+footer {
+    background-color: var(--accent-color);
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
