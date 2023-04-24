@@ -89,6 +89,16 @@ header img {
     max-width: 160px;
     height: auto;
 }
+
+header button {
+    background-color: #000000;
+    padding: 15px 24px;
+    border-radius: 40px;
+    border: none;
+    color: #FFFFFF;
+    font-size: 16px;
+
+}
 /* BANNER STYLING */
 .banner {
     display: grid;
@@ -108,10 +118,17 @@ header img {
 
 /* CARDS STYLING */
 .class-card {
-    border-radius: 10%;
+    border-radius: 40px;
     background-color: var(--cards-color);
     padding: 20px;
     position: relative;
+}
+
+.class-card button {
+    border-radius: 50px;
+    border: solid 1px var(--outline-color);
+    background-color: transparent;
+    padding: 10px 25px;
 }
 
 .header-card {
