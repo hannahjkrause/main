@@ -17,20 +17,29 @@
 
     /* SPACING AND MARGINS */
     --padding-for-sections: 20px;
-    --grid-gaps: 15px;
-
-    /* OTHER */
+    --grid-gaps: 30px;
+    --margin-top-bottom: 35px;
 
 }
 
 body {
     background-color: var(--background-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .content-container {
+    width: 90%;
+    margin: auto;
     display: grid;
-    grid-template: auto / repeat(3, 1fr);
+    grid-template-areas: 
+    "header header header"
+    "main main main";
+    gap: var(--grid-gaps);
+    flex-grow: 1;
 }
+
+/* HEADING & TYPOGRAPHY STYLING*/
 
 h1 {
     font-size: 64px;
@@ -61,28 +70,21 @@ p {
     color: var(--secondary-text-color);
 }
 
-header, main {
-    width: 90%;
-    margin: auto;
-    grid-column: 1 / -1;
-}
-
-header, main, footer {
-    padding: 20px;
-}
-
 /* HEADER STYLING */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    grid-area: header;
+    padding: var(--padding-for-sections) 0;
 }
+
 
 .navigation-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 header img {
@@ -99,20 +101,38 @@ header button {
     font-size: 16px;
 
 }
+
+#hamburger-menu {
+    display: none;
+}
+
+/* MAIN CONTAINER STYLING */
+main {
+    grid-area: main;
+}
 /* BANNER STYLING */
 .banner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--grid-gaps);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  align-items: center;
+  gap: 40px;
+  margin: var(--margin-top-bottom) 0 var(--margin-top-bottom) 0;
 }
 .banner p {
     font-size: 24px;
 }
+.banner img {
+    justify-self: end;
+}
+
 /* CARDS SECTION STYLING */
 .cards-section {
     display: grid;
-    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    gap: var(--grid-gaps);
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    gap: 35px;
+    justify-items: center;
+    align-items: center;
+    margin: var(--margin-top-bottom) 0 var(--margin-top-bottom) 0;
 }
 
 
@@ -122,6 +142,7 @@ header button {
     background-color: var(--cards-color);
     padding: 20px;
     position: relative;
+    max-width: 400px;
 }
 
 .class-card button {
@@ -137,8 +158,8 @@ header button {
 
 .class-symbol {
     position: absolute;
-    top: 0;
-    right: 10%;
+    top: -20%;
+    right: 5%;
 }
 /* FOOTER STYLING */
 footer {
@@ -147,8 +168,39 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: var(--padding-for-sections);
+
 }
 
+
+@media screen and (min-width: 992px) {
+.content-container {
+    max-width: 1480px;
+}
+
+.banner {
+    grid-template-columns: 1fr 1fr;
+}
+.cards-section {
+    grid-template-columns: repeat(3, 1fr);
+}
+}
+
+@media screen and (max-width: 600px) {
+    header button {
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+    nav {
+        display: none;
+    }
+    #hamburger-menu {
+        display: block;
+    }
+
+}
+    
 
 
 
